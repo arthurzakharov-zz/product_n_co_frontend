@@ -1,0 +1,35 @@
+.Search {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  height: 32px;
+  border: 1px solid black;
+  border-radius: 16px;
+}
+
+.SearchIcon {
+  width: 16px;
+  margin: 0 8px;
+}
+
+.SearchLabel {
+  flex-grow: 1;
+  display: block;
+  margin-right: 32px;
+}
+
+.SearchInput {
+  display: block;
+  width: 100%;
+  border: none;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 400;
+  color: black;
+  outline: none;
+}
+
+.SearchInput::placeholder {
+  color: dimgray;
+  font-weight: 300;
+}
