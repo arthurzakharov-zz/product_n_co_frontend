@@ -1,0 +1,62 @@
+.Product {
+  width: 150px;
+  box-shadow: 0 0 8px -4px black;
+  border-radius: 4px;
+  padding: 8px 16px;
+  color: black;
+}
+
+.ProductTitle {
+  margin: 0 auto;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-align: center;
+}
+
+.ProductImage {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.ProductInfo {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-top: 1px solid dimgrey;
+  border-bottom: 1px solid dimgray;
+}
+
+.ProductText {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.ProductText b {
+  font-weight: 400;
+}
+
+.ProductButtons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.ProductButton {
+  font-size: 12px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.ProductButtonDelete {
+  background-color: indianred;
+}
+
+.ProductButtonReview {
+  background-color: deepskyblue;
+}
