@@ -11,3 +11,13 @@
   justify-content: center;
   margin-bottom: 24px;
 }
+
+.ProductListNoItems {
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  line-height: 1;
+  color: black;
+  text-align: center;
+}

@@ -1,34 +1,28 @@
 import React from 'react';
 import styles from './product-list.module.css';
 import Product from '../product/product.component';
-import { HTTPS, path } from '../../axios';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { selectProducts } from '../../redux/product/product.selectors';
 
-const ProductList = () => {
-  const [products, setProducts] = React.useState([]);
-
-  React.useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const { data, status } = await HTTPS.get(path.products);
-        if (status === 200 && data.hasOwnProperty('payload')) {
-          setProducts(data.payload);
-        }
-      } catch (e) {
-        console.error('Error on fetching products: ', e);
-      }
-    };
-    // fetchProducts();
-  }, []);
-
+const ProductList = ({ products }) => {
   return (
     <section className={styles.ProductList}>
-      {products.map((product) => (
-        <div key={product._id} className={styles.ProductListItem}>
-          <Product />
-        </div>
-      ))}
+      {products.length ? (
+        products.map((product) => (
+          <div key={product._id} className={styles.ProductListItem}>
+            <Product />
+          </div>
+        ))
+      ) : (
+        <p className={styles.ProductListNoItems}>No products</p>
+      )}
     </section>
   );
 };
 
-export default ProductList;
+const mapStateToProps = createStructuredSelector({
+  products: selectProducts,
+});
+
+export default connect(mapStateToProps)(ProductList);
