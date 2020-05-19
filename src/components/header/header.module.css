@@ -1,0 +1,13 @@
+.Header {
+  border-bottom: 1px solid dimgray;
+}
+
+.HeaderSearch {
+  margin-bottom: 24px;
+}
+
+.HeaderAddProduct {
+  margin-bottom: 24px;
+  height: 30px;
+  background-color: grey;
+}
