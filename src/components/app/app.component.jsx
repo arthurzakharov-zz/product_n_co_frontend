@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './app.module.css';
-import Product from '../product/product.component';
+import ProductList from '../product-list/product-list.component';
 
 function App() {
   return (
     <div className={styles.App}>
-      <Product />
+      <ProductList products={[1, 2, 3, 4, 5, 6, 7]} />
     </div>
   );
 }
