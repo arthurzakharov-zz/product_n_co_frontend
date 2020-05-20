@@ -5,16 +5,27 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectProducts } from '../../redux/product/product.selectors';
 import { fetchProductsStartAsync } from '../../redux/product/product.actions';
+import { selectFilterSearch } from '../../redux/filter/filter.selectors';
 
-const ProductList = ({ products, fetchProductsStartAsync }) => {
+const ProductList = (props) => {
+  const { products, search, fetchProductsStartAsync } = props;
+
+  const [productVisible, setProductsVisible] = React.useState([]);
+
   React.useEffect(() => {
     fetchProductsStartAsync();
   }, []);
 
+  React.useEffect(() => {
+    setProductsVisible(
+      products.filter((p) => p.name.includes(search) || !search)
+    );
+  }, [search, products]);
+
   return (
     <section className={styles.ProductList}>
-      {products.length ? (
-        products.map((product) => (
+      {productVisible.length ? (
+        productVisible.map((product) => (
           <div key={product._id} className={styles.ProductListItem}>
             <Product details={product} />
           </div>
@@ -28,6 +39,7 @@ const ProductList = ({ products, fetchProductsStartAsync }) => {
 
 const mapStateToProps = createStructuredSelector({
   products: selectProducts,
+  search: selectFilterSearch,
 });
 
 const mapDispatchToProps = (dispatch) => ({
