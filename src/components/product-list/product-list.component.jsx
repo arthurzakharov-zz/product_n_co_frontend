@@ -16,7 +16,7 @@ const ProductList = ({ products, fetchProductsStartAsync }) => {
       {products.length ? (
         products.map((product) => (
           <div key={product._id} className={styles.ProductListItem}>
-            <Product />
+            <Product details={product} />
           </div>
         ))
       ) : (
