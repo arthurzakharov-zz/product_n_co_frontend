@@ -4,8 +4,13 @@ import Product from '../product/product.component';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectProducts } from '../../redux/product/product.selectors';
+import { fetchProductsStartAsync } from '../../redux/product/product.actions';
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, fetchProductsStartAsync }) => {
+  React.useEffect(() => {
+    fetchProductsStartAsync();
+  }, []);
+
   return (
     <section className={styles.ProductList}>
       {products.length ? (
@@ -25,4 +30,8 @@ const mapStateToProps = createStructuredSelector({
   products: selectProducts,
 });
 
-export default connect(mapStateToProps)(ProductList);
+const mapDispatchToProps = (dispatch) => ({
+  fetchProductsStartAsync: () => dispatch(fetchProductsStartAsync()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
