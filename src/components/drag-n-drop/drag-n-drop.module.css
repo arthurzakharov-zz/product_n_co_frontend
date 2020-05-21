@@ -1,0 +1,29 @@
+.DragNDrop {
+  position: relative;
+  width: 100%;
+}
+
+.DragNDropContainer {
+  border: 2px dashed green;
+  background-color: white;
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.DragNDropBox {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.DragNDropText {
+  font-size: 24px;
+  color: green;
+  text-align: center;
+}

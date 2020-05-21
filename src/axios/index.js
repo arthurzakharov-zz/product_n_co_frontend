@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+export const BASE_URL = 'https://productnco.herokuapp.com/';
+
 export const HTTPS = axios.create({
-  baseURL: 'https://productnco.herokuapp.com/',
+  baseURL: BASE_URL,
   timeout: 3000,
 });
 

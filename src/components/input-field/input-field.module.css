@@ -1,0 +1,27 @@
+.InputField {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.InputFieldLabel {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-self: center;
+  flex-basis: 100px;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+.InputFieldInput {
+  display: block;
+  flex-grow: 1;
+  padding: 4px 8px;
+  border: none;
+  border-left: 1px solid black;
+  font-size: 14px;
+}
