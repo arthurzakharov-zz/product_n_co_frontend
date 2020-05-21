@@ -6,10 +6,11 @@
 }
 
 .ProductListItem {
-  flex-basis: 50%;
   display: flex;
   justify-content: center;
   margin-bottom: 24px;
+  margin-right: 32px;
+  margin-left: 32px;
 }
 
 .ProductListNoItems {

@@ -6,6 +6,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectProducts } from '../../redux/product/product.selectors';
 import { fetchProductsStartAsync } from '../../redux/product/product.actions';
 import { selectFilterSearch } from '../../redux/filter/filter.selectors';
+import Modal from '../modal/modal.component';
 
 const ProductList = (props) => {
   const { products, search, fetchProductsStartAsync } = props;
@@ -33,6 +34,11 @@ const ProductList = (props) => {
       ) : (
         <p className={styles.ProductListNoItems}>No products</p>
       )}
+      <Modal>
+        <div>
+          <p>PPPPP</p>
+        </div>
+      </Modal>
     </section>
   );
 };
